@@ -16,7 +16,10 @@ cv2.createTrackbar("SAT Max", "HSV", 255, 255, empty)
 cv2.createTrackbar("VALUE Min", "HSV", 0, 255, empty)
 cv2.createTrackbar("VALUE Max", "HSV", 255, 255, empty)
 
+## ? For realtime video
 #cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+
+## ? For videos
 cap = cv2.VideoCapture("road_car_view.mp4")
 
 while True:    
