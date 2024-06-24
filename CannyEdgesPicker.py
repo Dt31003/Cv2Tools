@@ -10,6 +10,7 @@ cv2.namedWindow("CannyEdge")
 cv2.resizeWindow("CannyEdge", 640, 240)
 cv2.createTrackbar("Min Edge Val", "CannyEdge", 0, 255, empty)
 cv2.createTrackbar("Max Edge Val", "CannyEdge", 0, 255, empty)
+cv2.createTrackbar("Sobel delta", "CannyEdge", 0, 255, empty)
 
 ## ? For realtime video
 #cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
@@ -18,9 +19,8 @@ cv2.createTrackbar("Max Edge Val", "CannyEdge", 0, 255, empty)
 cap = cv2.VideoCapture("road_car_view.mp4")
 
 ## Sobel parameters
-scale = 1
-delta = 0
 depth = cv2.CV_16S
+scale = 1
 
 scale = 0.8
 
@@ -44,6 +44,7 @@ while True:
        
     minVal = cv2.getTrackbarPos("Min Edge Val", "CannyEdge")
     maxVal = cv2.getTrackbarPos("Max Edge Val", "CannyEdge")
+    delta = cv2.getTrackbarPos("Sobel delta", "CannyEdge")
     
     canny = cv2.Canny(img_bur, minVal, maxVal)
     
